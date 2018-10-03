@@ -10,6 +10,7 @@ import csv
 from string import punctuation
 import matplotlib.pyplot as plt
 import time
+import IPython.display from IPython
 
 class tweetlistener(StreamListener):
 
@@ -26,7 +27,7 @@ class tweetlistener(StreamListener):
             search_tweets()
 
         try:
-            print "----------NEW TWEET ARRIVED!-----------"
+            print "----------NEW TWEET RECEIVED!-----------"
             print "Tweet Text : %s" % status.text
             outfile.write(status.text)
             outfile.write(str("\n"))
@@ -99,7 +100,7 @@ class Sentiment():
         output = zip(tweet_list_dup, positive_counts, negative_counts,conclusion)
         #output = output.encode('utf-8')
 
-        print "******** Overall Analysis **************"
+        print "******** Overall Sentiment Analysis **************"
 
 
         if tot_pos > tot_neg and tot_pos > tot_neu:
